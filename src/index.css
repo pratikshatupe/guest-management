@@ -1,0 +1,129 @@
+/* GOOGLE FONTS (TOP ला असायलाच पाहिजे) */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* TAILWIND */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BASE LAYER */
+@layer base {
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #070D1C;
+    color: #EDF2F7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #1E2F4A; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #7C3AED; }
+
+  input, select, textarea { outline: none; }
+}
+
+/* COMPONENTS */
+@layer components {
+
+  /* SIDEBAR */
+  .sidebar-bg {
+    @apply bg-gradient-to-b from-[#0C1630] via-[#0A1020] to-[#07090F];
+  }
+
+  .nav-item {
+    @apply w-full flex items-center gap-2.5 px-3 py-2.5 rounded-lg mb-0.5 border-l-2 border-transparent
+           text-slate-500 text-[13px] font-normal transition-all duration-150 cursor-pointer
+           hover:bg-purple-500/5 hover:text-slate-300;
+  }
+
+  .nav-active {
+    @apply bg-gradient-to-r from-purple-600/20 to-purple-600/5 text-purple-400 border-l-2 border-purple-500 font-semibold;
+  }
+
+  /* CARD */
+  .card {
+    @apply bg-[#0F1A2E] border border-[#1E2F4A] rounded-xl;
+  }
+
+  .card-hover {
+    @apply transition-all duration-200 cursor-pointer
+           hover:-translate-y-0.5 hover:border-purple-500/50 hover:shadow-purple-glow;
+  }
+
+  /* BUTTONS */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-[13px] text-white
+           bg-gradient-to-r from-violet-600 to-purple-700
+           transition-all duration-200
+           hover:-translate-y-px;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-[13px]
+           bg-[#152040] text-slate-400 border border-[#1E2F4A]
+           transition-all duration-200
+           hover:bg-[#1C2A50] hover:text-slate-200;
+  }
+
+  .btn-danger {
+    @apply px-4 py-2 rounded-lg text-red-400 border border-red-500/25
+           hover:bg-red-500/20 transition;
+  }
+
+  /* INPUT */
+  .input {
+    @apply w-full px-3.5 py-2.5 rounded-lg text-[13px]
+           bg-[#0C1526] border border-[#1E2F4A]
+           text-slate-200 placeholder-slate-600
+           focus:border-purple-500 focus:outline-none;
+  }
+
+  /* BADGE */
+  .badge {
+    @apply px-2 py-1 text-xs rounded-full font-semibold;
+  }
+
+  .badge-success {
+    @apply bg-teal-500/10 text-teal-400;
+  }
+
+  .badge-warning {
+    @apply bg-amber-500/10 text-amber-400;
+  }
+
+  .badge-danger {
+    @apply bg-red-500/10 text-red-400;
+  }
+
+  /* TABLE */
+  .tbl-head {
+    @apply text-[10px] uppercase text-slate-600 border-b border-[#1E2F4A];
+  }
+
+  .tbl-td {
+    @apply px-3 py-3 text-[13px] text-slate-400 border-b border-[#1A2840]/50;
+  }
+
+  .tbl-row {
+    @apply hover:bg-purple-500/5 transition;
+  }
+
+  /* HERO BG */
+  .hero-bg {
+    background:
+      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(124,58,237,0.12), transparent),
+      #070D1C;
+  }
+}
+
+/* ANIMATION */
+@keyframes gradientShift {
+  0%,100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
