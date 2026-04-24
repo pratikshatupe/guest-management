@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//tmp/**)",
+      "Bash(npx vite *)",
+      "Bash(curl -s http://localhost:5174/src/App.jsx)",
+      "Bash(curl -s \"http://localhost:5174/src/pages/setting/Settings.jsx\")",
+      "Bash(curl -s \"http://localhost:5174/src/pages/rolepermission/RolePermission.jsx\")",
+      "Bash(taskkill //F //FI \"WINDOWTITLE eq vite*\")",
+      "Bash(pkill -f \"vite\")",
+      "Bash(tasklist //FI \"IMAGENAME eq node.exe\")",
+      "Bash(taskkill //F //PID 7352 //PID 10244)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:5175/__TRACKED_VAR__)",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:5176/__TRACKED_VAR__)"
+    ]
+  }
+}

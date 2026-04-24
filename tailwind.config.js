@@ -1,0 +1,87 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,jsx}"],
+  darkMode: ['selector', '[data-theme="dark"], .dark'],
+  theme: {
+    extend: {
+      colors: {
+        // Ocean Teal + Sapphire Blue theme
+        ocean: {
+          950: '#020810',
+          900: '#050E1A',
+          800: '#0A1828',
+          700: '#0D2035',
+          600: '#122842',
+          500: '#1A3350',
+        },
+        primary: {
+          50:  '#F0F9FF',
+          100: '#E0F2FE',
+          200: '#BAE6FD',
+          300: '#7DD3FC',
+          400: '#38BDF8',
+          500: '#0EA5E9',
+          600: '#0284C7',
+          700: '#0369A1',
+          800: '#075985',
+          900: '#0C4A6E',
+        },
+        teal: {
+          50:  '#F0FDFA',
+          100: '#CCFBF1',
+          200: '#99F6E4',
+          300: '#5EEAD4',
+          400: '#2DD4BF',
+          500: '#14B8A6',
+          600: '#0D9488',
+          700: '#0F766E',
+          800: '#115E59',
+          900: '#134E4A',
+        },
+        surface: {
+          50:  '#F0F9FF',
+          100: '#E0F2FE',
+          card:'#FFFFFF',
+          dark:'#0A1828',
+        }
+      },
+      fontFamily: {
+        sans:    ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+        display: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
+        mono:    ['JetBrains Mono', 'monospace'],
+      },
+      animation: {
+        'fade-in':    'fadeIn 0.4s ease both',
+        'slide-up':   'slideUp 0.45s ease both',
+        'scale-in':   'scaleIn 0.35s ease both',
+        'pulse-dot':  'pulseDot 1.6s ease-in-out infinite',
+        'float':      'float 4s ease-in-out infinite',
+        'gradient':   'gradientShift 5s ease infinite',
+        'ping-slow':  'ping 1.6s ease-in-out infinite',
+        'glow':       'glowPulse 3s ease-in-out infinite',
+        'notif-pop':  'notifPop 0.4s ease both',
+      },
+      keyframes: {
+        fadeIn:       { from: { opacity: '0' },                              to: { opacity: '1' } },
+        slideUp:      { from: { opacity: '0', transform: 'translateY(20px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
+        scaleIn:      { from: { opacity: '0', transform: 'scale(0.92)' },    to: { opacity: '1', transform: 'scale(1)' } },
+        float:        { '0%,100%': { transform: 'translateY(0)' },           '50%': { transform: 'translateY(-8px)' } },
+        gradientShift:{ '0%,100%': { backgroundPosition: '0% 50%' },         '50%': { backgroundPosition: '100% 50%' } },
+        glowPulse:    { '0%,100%': { boxShadow: '0 0 20px rgba(14,165,233,0.4)' }, '50%': { boxShadow: '0 0 40px rgba(14,165,233,0.7)' } },
+        notifPop:     { '0%': { transform: 'scale(0)', opacity: '0' }, '70%': { transform: 'scale(1.15)', opacity: '1' }, '100%': { transform: 'scale(1)', opacity: '1' } },
+        pulseDot:     { '0%,100%': { opacity: '1' }, '50%': { opacity: '0.4' } },
+      },
+      backgroundSize: { '200': '200% 200%' },
+      boxShadow: {
+        'teal-glow':  '0 0 0 1px rgba(14,165,233,0.2), 0 8px 32px rgba(14,165,233,0.2)',
+        'card':       '0 4px 20px rgba(0,0,0,0.08)',
+        'card-hover': '0 8px 32px rgba(14,165,233,0.15)',
+        'btn':        '0 4px 14px rgba(14,165,233,0.4)',
+        'btn-hover':  '0 6px 22px rgba(14,165,233,0.6)',
+        'topbar':     '0 1px 0 rgba(14,165,233,0.2)',
+        'input-focus':'0 0 0 3px rgba(14,165,233,0.15)',
+      },
+    },
+  },
+  plugins: [],
+}
