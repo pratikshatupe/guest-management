@@ -23,7 +23,7 @@ import ImpersonationBanner from './components/ImpersonationBanner';
  * fetched on demand the first time the user visits it.
  */
 const Landing           = lazy(() => import('./pages/Landing/index'));
-const Dashboard         = lazy(() => import('./pages/Dashboard.jsx'));
+const Dashboard         = lazy(() => import('./pages/Dashboard/index'));
 const GuestLog          = lazy(() => import('./pages/GuestLog/index'));
 const GuestCheckOut     = lazy(() => import('./pages/GuestCheckOut/index'));
 const WalkIn            = lazy(() => import('./pages/WalkIn/index'));
@@ -131,9 +131,25 @@ function PageLoader() {
  */
 function LandingRoute() {
   const navigate = useNavigate();
+
+  const handleRegLogin = (userData) => {
+    if (userData?.password) {
+      try {
+        sessionStorage.setItem('cgms_reg_prefill', JSON.stringify({
+          email: userData.email || userData.emailId || '',
+          password: userData.password || '',
+        }));
+      } catch(e) {}
+    }
+    navigate('/login');
+  };
+
   return (
     <Suspense fallback={<PageLoader />}>
-      <Landing onEnterApp={() => navigate('/login')} />
+      <Landing
+        onEnterApp={() => navigate('/login')}
+        onLogin={handleRegLogin}
+      />
     </Suspense>
   );
 }

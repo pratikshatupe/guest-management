@@ -62,7 +62,6 @@ export default function ProfileDropdown({ user, onLogout, isMobile = false }) {
     },
   ].filter(Boolean);
 
-  /* Click outside / Esc closes the dropdown. */
   useEffect(() => {
     if (!open) return undefined;
     const onClick = (e) => {
@@ -107,7 +106,6 @@ export default function ProfileDropdown({ user, onLogout, isMobile = false }) {
     }
   };
 
-  /* Sync focus to the active menu item. */
   useEffect(() => {
     if (!open || focusedIdx < 0) return;
     const node = menuRef.current?.querySelector(`[data-menu-idx="${focusedIdx}"]`);
@@ -134,7 +132,7 @@ export default function ProfileDropdown({ user, onLogout, isMobile = false }) {
         aria-hidden="true"
         style={{
           width: 36, height: 36, borderRadius: 9,
-          background: 'rgba(14,165,233,0.12)',
+          background: 'rgba(108,92,231,0.12)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}
       >
@@ -152,8 +150,8 @@ export default function ProfileDropdown({ user, onLogout, isMobile = false }) {
         }
         .profile-trigger { transition: border-color .2s, background .2s; }
         .profile-trigger:hover {
-          border-color: rgba(14,165,233,0.6) !important;
-          background: rgba(14,165,233,0.22) !important;
+          border-color: rgba(108,92,231,0.6) !important;
+          background: rgba(108,92,231,0.22) !important;
         }
         .profile-menu-item {
           display: flex; align-items: center; gap: 10px;
@@ -166,7 +164,7 @@ export default function ProfileDropdown({ user, onLogout, isMobile = false }) {
         }
         .profile-menu-item:hover,
         .profile-menu-item:focus-visible {
-          background: rgba(14,165,233,0.18);
+          background: rgba(108,92,231,0.18);
         }
         .profile-menu-item.destructive { color: #FCA5A5; }
         .profile-menu-item.destructive:hover,
@@ -193,8 +191,8 @@ export default function ProfileDropdown({ user, onLogout, isMobile = false }) {
           style={{
             display: 'flex', alignItems: 'center', gap: 8,
             padding: '5px 10px',
-            background: 'rgba(14,165,233,0.12)',
-            border: '1px solid rgba(14,165,233,0.25)',
+            background: 'rgba(108,92,231,0.12)',
+            border: '1px solid rgba(108,92,231,0.25)',
             borderRadius: 9,
             cursor: 'pointer',
             fontFamily: 'inherit', flexShrink: 0,
@@ -248,19 +246,18 @@ export default function ProfileDropdown({ user, onLogout, isMobile = false }) {
               position: 'absolute', top: 44, right: 0,
               width: 'min(280px, 90vw)',
               background: '#0C2340',
-              border: '1px solid rgba(14,165,233,0.3)',
+              border: '1px solid rgba(108,92,231,0.3)',
               borderRadius: 14,
               boxShadow: '0 20px 50px rgba(0,0,0,0.7)',
               zIndex: 300, overflow: 'hidden',
             }}
           >
-            {/* Profile summary */}
             <div
               style={{
                 padding: '14px 16px',
                 display: 'flex', alignItems: 'center', gap: 12,
-                background: 'linear-gradient(135deg, rgba(14,165,233,0.25), rgba(14,165,233,0.05))',
-                borderBottom: '1px solid rgba(14,165,233,0.18)',
+                background: 'linear-gradient(135deg, rgba(108,92,231,0.25), rgba(108,92,231,0.05))',
+                borderBottom: '1px solid rgba(108,92,231,0.18)',
               }}
             >
               <div
@@ -309,7 +306,6 @@ export default function ProfileDropdown({ user, onLogout, isMobile = false }) {
               </div>
             </div>
 
-            {/* Menu items */}
             <div role="none" style={{ padding: '4px 0' }}>
               {items.map((item, i) => {
                 const Icon = item.icon;

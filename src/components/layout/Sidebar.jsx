@@ -34,11 +34,11 @@ const NAV = [
 ];
 
 const roleColors = {
-  [R.SUPER_ADMIN]: '#38BDF8',
-  [R.DIRECTOR]:    '#2DD4BF',
+  [R.SUPER_ADMIN]: '#a29bfe',
+  [R.DIRECTOR]:    '#55efc4',
   [R.MANAGER]:     '#34D399',
   [R.SERVICE_STAFF]:'#FBBF24',
-  [R.RECEPTION]:   '#22D3EE',
+  [R.RECEPTION]:   '#00cec9',
 };
 
 const roleLabels = {
@@ -116,18 +116,16 @@ export default function Sidebar({
           borderRight: '1px solid var(--sb-border)',
         }}
       >
-        {/* Top accent bar */}
         <div className="h-[2px] flex-shrink-0" style={{
-          background: 'linear-gradient(90deg, #0EA5E9, #0D9488, #10B981)',
+          background: 'linear-gradient(90deg, #6c5ce7, #a29bfe, #00cec9)',
         }} />
 
-        {/* Logo + collapse btn */}
         <div className="flex min-h-[58px] flex-shrink-0 items-center gap-3 overflow-hidden p-3.5"
           style={{ borderBottom: '1px solid var(--sb-border)' }}>
           <div className="flex h-[34px] w-[34px] flex-shrink-0 items-center justify-center rounded-[10px] text-[16px] font-extrabold text-white"
             style={{
-              background: 'linear-gradient(135deg, #0EA5E9, #0D9488)',
-              boxShadow: '0 0 16px rgba(14,165,233,0.45)',
+              background: 'linear-gradient(135deg, #6c5ce7, #00cec9)',
+              boxShadow: '0 0 16px rgba(108,92,231,0.45)',
             }}>
             G
           </div>
@@ -135,10 +133,10 @@ export default function Sidebar({
           {isExpanded && (
             <div className="min-w-0 flex-1 overflow-hidden">
               <div className="whitespace-nowrap font-[Outfit,sans-serif] text-[14px] font-bold leading-[1.2]"
-                style={{ color: '#BAE6FD' }}>
+                style={{ color: '#e9e4ff' }}>
                 CorpGMS
               </div>
-              <div className="whitespace-nowrap text-[10px]" style={{ color: 'rgba(56,189,248,0.5)' }}>
+              <div className="whitespace-nowrap text-[10px]" style={{ color: 'rgba(162,155,254,0.6)' }}>
                 Guest Management
               </div>
             </div>
@@ -149,9 +147,9 @@ export default function Sidebar({
               onClick={() => setCollapsed(!collapsed)}
               title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
               className="ml-auto rounded-[6px] border-0 bg-transparent px-[6px] py-1 text-[12px] transition-colors duration-200"
-              style={{ color: 'rgba(56,189,248,0.45)' }}
-              onMouseEnter={e => { e.target.style.background = 'rgba(14,165,233,0.15)'; e.target.style.color = '#7DD3FC'; }}
-              onMouseLeave={e => { e.target.style.background = 'transparent'; e.target.style.color = 'rgba(56,189,248,0.45)'; }}
+              style={{ color: 'rgba(162,155,254,0.55)' }}
+              onMouseEnter={e => { e.target.style.background = 'rgba(108,92,231,0.18)'; e.target.style.color = '#c4b8ff'; }}
+              onMouseLeave={e => { e.target.style.background = 'transparent'; e.target.style.color = 'rgba(162,155,254,0.55)'; }}
               type="button"
             >
               {collapsed ? '→' : '←'}
@@ -162,7 +160,7 @@ export default function Sidebar({
             <button
               onClick={onMobileClose}
               className="ml-auto rounded-[6px] border-0 bg-transparent px-2 py-1 text-[18px] leading-none"
-              style={{ color: 'rgba(56,189,248,0.5)' }}
+              style={{ color: 'rgba(162,155,254,0.6)' }}
               type="button"
             >
               ×
@@ -170,7 +168,6 @@ export default function Sidebar({
           )}
         </div>
 
-        {/* Nav */}
         <nav className="sidebar-scroll flex-1 overflow-y-auto overflow-x-hidden px-2 py-2">
           {allowed.map((item) => {
             const active = activePage === item.path;
@@ -225,13 +222,12 @@ export default function Sidebar({
           })}
         </nav>
 
-        {/* User info + logout */}
         {user && (
           <div className="flex-shrink-0 p-2 space-y-2" style={{ borderTop: '1px solid var(--sb-border)' }}>
             <div className="flex items-center gap-[9px] overflow-hidden rounded-[8px] px-[10px] py-[9px]"
               style={{
-                border: '1px solid rgba(14,165,233,0.18)',
-                background: 'rgba(14,165,233,0.08)',
+                border: '1px solid rgba(108,92,231,0.22)',
+                background: 'rgba(108,92,231,0.10)',
               }}>
               <div
                 className="flex h-[30px] w-[30px] flex-shrink-0 items-center justify-center rounded-[8px] border text-[10px] font-bold"
@@ -247,7 +243,7 @@ export default function Sidebar({
 
               {isExpanded && (
                 <div className="min-w-0 flex-1">
-                  <div className="overflow-hidden text-ellipsis whitespace-nowrap text-[12px] font-semibold" style={{ color: '#BAE6FD' }}>
+                  <div className="overflow-hidden text-ellipsis whitespace-nowrap text-[12px] font-semibold" style={{ color: '#e9e4ff' }}>
                     {user.name}
                   </div>
                   <div className="text-[10px]" style={{ color: roleColors[user.role] }}>
@@ -277,13 +273,13 @@ export default function Sidebar({
 
       <style>{`
         .sidebar-nav-btn:hover:not([style*="var(--sb-accent)"]) {
-          background: rgba(14,165,233,0.10) !important;
-          color: #7DD3FC !important;
+          background: rgba(108,92,231,0.12) !important;
+          color: #c4b8ff !important;
         }
         .sidebar-scroll::-webkit-scrollbar { width: 4px; }
         .sidebar-scroll::-webkit-scrollbar-track { background: transparent; }
-        .sidebar-scroll::-webkit-scrollbar-thumb { background: rgba(14,165,233,0.15); border-radius: 4px; }
-        .sidebar-scroll::-webkit-scrollbar-thumb:hover { background: rgba(14,165,233,0.35); }
+        .sidebar-scroll::-webkit-scrollbar-thumb { background: rgba(108,92,231,0.20); border-radius: 4px; }
+        .sidebar-scroll::-webkit-scrollbar-thumb:hover { background: rgba(108,92,231,0.40); }
       `}</style>
     </>
   );

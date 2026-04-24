@@ -114,20 +114,19 @@ export default function Topbar({
         .topbar-root::before {
           content:'';
           position:absolute; top:0; left:0; right:0; height:2px;
-          background: linear-gradient(90deg, #0EA5E9, #0D9488, #10B981);
+          background: linear-gradient(90deg, #6c5ce7, #a29bfe, #00cec9);
         }
         .topbar-menu-btn { transition: border-color 0.2s, background 0.2s; }
-        .topbar-menu-btn:hover { border-color: rgba(14,165,233,0.5) !important; background: rgba(14,165,233,0.18) !important; }
-        .topbar-menu-btn:hover span { background: #7DD3FC !important; }
+        .topbar-menu-btn:hover { border-color: rgba(108,92,231,0.5) !important; background: rgba(108,92,231,0.20) !important; }
+        .topbar-menu-btn:hover span { background: #c4b8ff !important; }
         .topbar-icon-btn { transition: border-color 0.2s, background 0.2s; }
-        .topbar-icon-btn:hover { border-color: rgba(14,165,233,0.45) !important; background: rgba(14,165,233,0.15) !important; }
-        .search-suggestion-item:hover { background: rgba(14,165,233,0.10) !important; }
+        .topbar-icon-btn:hover { border-color: rgba(108,92,231,0.45) !important; background: rgba(108,92,231,0.18) !important; }
+        .search-suggestion-item:hover { background: rgba(108,92,231,0.12) !important; }
         @keyframes slideDown { from { opacity:0; transform: translateY(-8px); } to { opacity:1; transform: translateY(0); } }
         .dropdown-anim { animation: slideDown 0.18s ease; }
       `}</style>
 
       <header className="topbar-root">
-        {/* Hamburger / collapse */}
         <button
           onClick={isMobile ? onMenuClick : () => setCollapsed?.(c => !c)}
           title={isMobile ? 'Open menu' : collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
@@ -154,7 +153,6 @@ export default function Topbar({
           ))}
         </button>
 
-        {/* Page title */}
         <div style={{ flex:1, minWidth:0 }}>
           <h1 style={{
             fontFamily:'Outfit, sans-serif',
@@ -167,13 +165,12 @@ export default function Topbar({
           </h1>
         </div>
 
-        {/* Search */}
         <div ref={searchRef} style={{ position:'relative', flexShrink:0 }}>
           <div style={{
             display:'flex', alignItems:'center', gap:'8px',
             padding:'7px 12px',
             background: 'var(--tb-btn-bg)',
-            border:`1px solid ${showSuggestions ? '#0EA5E9' : 'var(--tb-btn-border)'}`,
+            border:`1px solid ${showSuggestions ? '#6c5ce7' : 'var(--tb-btn-border)'}`,
             borderRadius:'9px', transition:'border-color 0.2s',
             width: isMobile ? '120px' : '220px',
           }}>
@@ -195,7 +192,7 @@ export default function Topbar({
                 title="Clear search"
                 style={{
                   background:'none', border:'none', cursor:'pointer',
-                  color:'rgba(56,189,248,0.55)', padding:0, fontSize:'14px',
+                  color:'rgba(162,155,254,0.65)', padding:0, fontSize:'14px',
                   flexShrink:0, lineHeight:1,
                 }}
               >
@@ -204,26 +201,25 @@ export default function Topbar({
             )}
             {!search && !isMobile && (
               <span style={{
-                fontSize:'10px', color:'rgba(14,165,233,0.5)',
-                background:'rgba(14,165,233,0.12)', padding:'1px 5px',
+                fontSize:'10px', color:'rgba(162,155,254,0.65)',
+                background:'rgba(108,92,231,0.14)', padding:'1px 5px',
                 borderRadius:'4px', flexShrink:0,
               }}>⌘K</span>
             )}
           </div>
 
-          {/* Suggestions dropdown */}
           {showSuggestions && suggestions.length > 0 && (
             <div className="dropdown-anim" style={{
               position:'absolute', top:'42px', left:0, right:0,
               background:'var(--tb-bg)',
-              border:'1px solid rgba(14,165,233,0.28)',
+              border:'1px solid rgba(108,92,231,0.28)',
               borderRadius:'12px',
               boxShadow:'0 16px 40px rgba(0,0,0,0.5)',
               zIndex:300, overflow:'hidden',
             }}>
               <div style={{
                 padding:'6px 10px 4px',
-                fontSize:'10px', color:'rgba(56,189,248,0.5)',
+                fontSize:'10px', color:'rgba(162,155,254,0.6)',
                 fontWeight:700, textTransform:'uppercase', letterSpacing:'0.06em',
               }}>
                 Navigate to
@@ -236,15 +232,15 @@ export default function Topbar({
                   style={{
                     display:'flex', alignItems:'center', gap:'10px',
                     padding:'10px 12px', cursor:'pointer',
-                    background: i === focusedIdx ? 'rgba(14,165,233,0.15)' : 'transparent',
-                    borderLeft: i === focusedIdx ? '2px solid #0EA5E9' : '2px solid transparent',
+                    background: i === focusedIdx ? 'rgba(108,92,231,0.18)' : 'transparent',
+                    borderLeft: i === focusedIdx ? '2px solid #6c5ce7' : '2px solid transparent',
                     transition:'all 0.1s',
                   }}
                 >
                   <span style={{ fontSize:'16px' }}>{s.icon}</span>
                   <div>
                     <div style={{ fontSize:'13px', fontWeight:600, color:'var(--tb-text)' }}>{s.label}</div>
-                    <div style={{ fontSize:'10px', color:'rgba(56,189,248,0.45)' }}>Press Enter to navigate</div>
+                    <div style={{ fontSize:'10px', color:'rgba(162,155,254,0.55)' }}>Press Enter to navigate</div>
                   </div>
                 </div>
               ))}
@@ -252,7 +248,6 @@ export default function Topbar({
           )}
         </div>
 
-        {/* Theme toggle */}
         <button
           onClick={onToggleTheme}
           title={theme === 'dark' ? 'Switch to Light mode' : 'Switch to Dark mode'}
@@ -269,7 +264,6 @@ export default function Topbar({
           {theme === 'dark' ? '☀️' : '🌙'}
         </button>
 
-        {/* Notification bell */}
         <NotificationBell
           user={user}
           setActivePage={setActivePage}
@@ -277,7 +271,6 @@ export default function Topbar({
           variant="dark"
         />
 
-        {/* Profile dropdown */}
         <ProfileDropdown
           user={user}
           onLogout={onLogout || logout}

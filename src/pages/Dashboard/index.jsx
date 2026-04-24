@@ -265,6 +265,7 @@ export default function Dashboard({ user }) {
               })}
             </div>
           ) : (
+            <>
             {/* Desktop table */}
             <div className="hidden sm:block w-full">
               <table className="w-full">
@@ -314,6 +315,7 @@ export default function Dashboard({ user }) {
                 );
               })}
             </div>
+            </>
           )}
         </div>
 

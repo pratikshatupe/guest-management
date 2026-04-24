@@ -1,87 +1,91 @@
-/* GOOGLE FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
 
-/* TAILWIND */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* ─── DESIGN TOKENS ─────────────────────────────────────────
-   Light mode  → Clean Sky-White + Ocean Teal + Sapphire Blue
-   Dark mode   → Deep Ocean Midnight + Teal Glow + Cyan Accent
+   Matched to guestflow-v2.vercel.app
+   Light mode  → Clean white + Indigo/Purple (#6c5ce7) + Cyan (#00cec9)
+   Dark mode   → Deep navy-purple + Lavender glow + Mint accent
 ───────────────────────────────────────────────────────────── */
 :root {
-  --app-bg:             #F0F9FF;
+  --app-bg:             #f4f7fc;
   --app-surface:        #FFFFFF;
-  --app-surface-muted:  #E0F2FE;
+  --app-surface-muted:  #eef2f9;
   --app-surface-card:   #FFFFFF;
-  --app-text:           #0C2340;
-  --app-text-muted:     #4A6380;
-  --app-text-subtle:    #94A3B8;
-  --brand-primary:      #0EA5E9;
-  --brand-accent:       #0D9488;
-  --brand-glow:         rgba(14,165,233,0.30);
-  --app-border:         #BAE6FD;
-  --app-border-strong:  #7DD3FC;
-  --sb-bg-from:         #0C2340;
-  --sb-bg-via:          #0A1E35;
-  --sb-bg-to:           #071526;
-  --sb-accent:          #0EA5E9;
-  --sb-text:            #5B8BAE;
-  --sb-text-active:     #BAE6FD;
-  --sb-active-bg:       rgba(14,165,233,0.18);
-  --sb-border:          rgba(14,165,233,0.12);
-  --tb-bg:              #0C2340;
-  --tb-border:          rgba(14,165,233,0.18);
-  --tb-text:            #E0F2FE;
-  --tb-btn-bg:          rgba(14,165,233,0.12);
-  --tb-btn-border:      rgba(14,165,233,0.25);
-  --tb-icon-color:      #7DD3FC;
-  --scroll-thumb:       #BAE6FD;
-  --scroll-thumb-hover: #0EA5E9;
-  --sa-bg:     #F0F9FF;
+  --app-text:           #0f172a;
+  --app-text-muted:     #475569;
+  --app-text-subtle:    #94a3b8;
+  --brand-primary:      #6c5ce7;
+  --brand-primary-light:#a29bfe;
+  --brand-primary-dark: #5a4bd1;
+  --brand-accent:       #00cec9;
+  --brand-accent-light: #55efc4;
+  --brand-glow:         rgba(108,92,231,0.30);
+  --app-border:         rgba(108,92,231,0.15);
+  --app-border-strong:  rgba(108,92,231,0.28);
+  --sb-bg-from:         #0a0f2c;
+  --sb-bg-via:          #1a1f4e;
+  --sb-bg-to:           #1a0a3e;
+  --sb-accent:          #6c5ce7;
+  --sb-text:            #a29bfe;
+  --sb-text-active:     #e9e4ff;
+  --sb-active-bg:       rgba(108,92,231,0.22);
+  --sb-border:          rgba(108,92,231,0.15);
+  --tb-bg:              #0a0f2c;
+  --tb-border:          rgba(108,92,231,0.20);
+  --tb-text:            #e9e4ff;
+  --tb-btn-bg:          rgba(108,92,231,0.14);
+  --tb-btn-border:      rgba(108,92,231,0.28);
+  --tb-icon-color:      #a29bfe;
+  --scroll-thumb:       #c4b8ff;
+  --scroll-thumb-hover: #6c5ce7;
+  --sa-bg:     #f4f7fc;
 --sa-card:   #ffffff;
---sa-border: #E2E8F0;
---sa-text:   #0C2340;
+--sa-border: #e2e8f0;
+--sa-text:   #0f172a;
 }
 
 html[data-theme="dark"] {
-  --app-bg:             #050E1A;
-  --app-surface:        #0A1828;
-  --app-surface-muted:  #071220;
-  --app-surface-card:   #0D1F30;
-  --app-text:           #C8E6F5;
-  --app-text-muted:     #6BA3C0;
-  --app-text-subtle:    #3A5E78;
-  --brand-primary:      #38BDF8;
-  --brand-accent:       #2DD4BF;
-  --brand-glow:         rgba(56,189,248,0.25);
-  --app-border:         #142535;
-  --app-border-strong:  #1A3A52;
-  --sb-bg-from:         #030A12;
-  --sb-bg-via:          #04101C;
-  --sb-bg-to:           #020810;
-  --sb-accent:          #38BDF8;
-  --sb-text:            #3A6480;
-  --sb-text-active:     #7DD3FC;
-  --sb-active-bg:       rgba(56,189,248,0.14);
-  --sb-border:          rgba(56,189,248,0.09);
-  --tb-bg:              #030A12;
-  --tb-border:          rgba(56,189,248,0.10);
-  --tb-text:            #BAE6FD;
-  --tb-btn-bg:          rgba(56,189,248,0.08);
-  --sa-bg:     #050E1A;
---sa-card:   #0A1828;
---sa-border: #142535;
+  --app-bg:             #0a0e1a;
+  --app-surface:        #0f1629;
+  --app-surface-muted:  #141c33;
+  --app-surface-card:   #131a2e;
+  --app-text:           #e2e8f0;
+  --app-text-muted:     #94a3b8;
+  --app-text-subtle:    #64748b;
+  --brand-primary:      #a29bfe;
+  --brand-primary-light:#c4b8ff;
+  --brand-primary-dark: #6c5ce7;
+  --brand-accent:       #55efc4;
+  --brand-accent-light: #7cf7d3;
+  --brand-glow:         rgba(108,92,231,0.30);
+  --app-border:         rgba(108,92,231,0.18);
+  --app-border-strong:  rgba(108,92,231,0.32);
+  --sb-bg-from:         #0a0e1a;
+  --sb-bg-via:          #0f1629;
+  --sb-bg-to:           #1a0a3e;
+  --sb-accent:          #a29bfe;
+  --sb-text:            #94a3b8;
+  --sb-text-active:     #e9e4ff;
+  --sb-active-bg:       rgba(108,92,231,0.20);
+  --sb-border:          rgba(108,92,231,0.14);
+  --tb-bg:              #0a0e1a;
+  --tb-border:          rgba(108,92,231,0.18);
+  --tb-text:            #e9e4ff;
+  --tb-btn-bg:          rgba(108,92,231,0.14);
+  --sa-bg:     #0a0e1a;
+--sa-card:   #0f1629;
+--sa-border: #141c33;
 --sa-text:   #e2e8f0;
-  --tb-btn-border:      rgba(56,189,248,0.18);
-  --tb-icon-color:      #38BDF8;
-  --scroll-thumb:       #142535;
-  --scroll-thumb-hover: #38BDF8;
-  
+  --tb-btn-border:      rgba(108,92,231,0.26);
+  --tb-icon-color:      #a29bfe;
+  --scroll-thumb:       #1a1f4e;
+  --scroll-thumb-hover: #a29bfe;
+
 }
 
-/* BASE LAYER */
 @layer base {
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; transition: background-color 0.3s ease, color 0.3s ease; }
@@ -101,7 +105,6 @@ html[data-theme="dark"] {
   input, select, textarea { outline: none; }
 }
 
-/* COMPONENTS */
 @layer components {
   .sidebar-bg { background: linear-gradient(180deg, var(--sb-bg-from), var(--sb-bg-via), var(--sb-bg-to)); }
 
@@ -125,8 +128,8 @@ html[data-theme="dark"] {
 
   .btn-primary {
     @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-[13px] text-white transition-all duration-200 hover:-translate-y-px;
-    background: linear-gradient(135deg, #0EA5E9, #0D9488);
-    box-shadow: 0 4px 14px rgba(14,165,233,0.35);
+    background: linear-gradient(135deg, #6c5ce7, #00cec9);
+    box-shadow: 0 4px 14px rgba(108,92,231,0.35);
   }
   .btn-secondary {
     @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-[13px] transition-all duration-200;
@@ -152,19 +155,16 @@ html[data-theme="dark"] {
 
   .tbl-head { @apply text-[10px] uppercase; color: var(--app-text-subtle); border-bottom: 1px solid var(--app-border); }
   .tbl-td { @apply px-3 py-3 text-[13px]; color: var(--app-text-muted); border-bottom: 1px solid var(--app-border); }
-  .tbl-row:hover { background: rgba(14,165,233,0.04); }
+  .tbl-row:hover { background: rgba(108,92,231,0.05); }
 
-  .hero-bg { background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(14,165,233,0.10), transparent), var(--app-bg); }
+  .hero-bg { background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(108,92,231,0.10), transparent), var(--app-bg); }
 }
 
-/* ANIMATION */
 @keyframes gradientShift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 
-/* LIGHT mode body */
-html:not([data-theme="dark"]) body { background-color: #F0F9FF !important; color: #0C2340 !important; }
-html:not([data-theme="dark"]) main { background-color: #F0F9FF !important; }
+html:not([data-theme="dark"]) body { background-color: #f4f7fc !important; color: #0f172a !important; }
+html:not([data-theme="dark"]) main { background-color: #f4f7fc !important; }
 
-/* DARK mode overrides */
 html[data-theme="dark"] body { background-color: var(--app-bg) !important; color: var(--app-text) !important; }
 html[data-theme="dark"] main { background-color: var(--app-bg) !important; }
 html[data-theme="dark"] .bg-white           { background-color: var(--app-surface) !important; }
@@ -176,10 +176,10 @@ html[data-theme="dark"] .border-slate-200   { border-color: var(--app-border) !i
 html[data-theme="dark"] .divide-slate-100 > :not([hidden]) ~ :not([hidden]) { border-color: var(--app-border) !important; }
 html[data-theme="dark"] .text-\[\#1E1B4B\]  { color: var(--app-text) !important; }
 html[data-theme="dark"] .text-\[\#0C2340\]  { color: var(--app-text) !important; }
-html[data-theme="dark"] .text-slate-700     { color: #BAE6FD !important; }
-html[data-theme="dark"] .text-slate-600     { color: #6BA3C0 !important; }
+html[data-theme="dark"] .text-slate-700     { color: #e9e4ff !important; }
+html[data-theme="dark"] .text-slate-600     { color: #94a3b8 !important; }
 html[data-theme="dark"] .text-slate-500     { color: var(--app-text-muted) !important; }
-html[data-theme="dark"] .text-slate-400     { color: #3A6480 !important; }
+html[data-theme="dark"] .text-slate-400     { color: #64748b !important; }
 html[data-theme="dark"] { background-color: var(--app-bg) !important; color: var(--app-text) !important; }
 html[data-theme="dark"] * { background-color: transparent; color: inherit; }
 
@@ -193,7 +193,6 @@ html[data-theme="dark"] .how-card {
 
 html, body { transition: background-color 0.3s ease, color 0.3s ease; }
 
-/* Settings / RolePermission dark */
 html[data-theme="dark"] .cgms-settings-page,
 html[data-theme="dark"] .cgms-rolepermission-page {
   background-color: var(--app-bg) !important;
@@ -238,7 +237,6 @@ html[data-theme="dark"] .cgms-rolepermission-page td {
   .cgms-rp-mobile  { display: flex !important; }
 }
 
-/* Landing + Login dark */
 html[data-theme="dark"] .cgms-landing-page,
 html[data-theme="dark"] .cgms-login-page {
   background-color: var(--app-bg) !important;
@@ -290,8 +288,154 @@ html[data-theme="dark"] .cgms-landing-page h2,
 html[data-theme="dark"] .cgms-landing-page h3,
 html[data-theme="dark"] .cgms-login-page    h1,
 html[data-theme="dark"] .cgms-login-page    h2,
-html[data-theme="dark"] .cgms-login-page    h3 { color: #E0F2FE; }
+html[data-theme="dark"] .cgms-login-page    h3 { color: #e9e4ff; }
 html[data-theme="dark"] .cgms-landing-page [style*="border-top: 1px solid"],
 html[data-theme="dark"] .cgms-landing-page [style*="border-bottom: 1px solid"],
 html[data-theme="dark"] .cgms-login-page    [style*="border-top: 1px solid"],
 html[data-theme="dark"] .cgms-login-page    [style*="border-bottom: 1px solid"] { border-color: var(--app-border) !important; }
+
+/* ─── GLOBAL PALETTE REMAP ─────────────────────────────────
+   Retroactively redirect inline hardcoded sky/teal brand hex
+   values to the new Purple + Cyan palette so that untouched
+   page components inherit the new theme.
+──────────────────────────────────────────────────────────── */
+
+/* Background: sky-500 → purple-500 */
+[style*="background: #0EA5E9"],
+[style*="background:#0EA5E9"],
+[style*="background-color: #0EA5E9"],
+[style*="background-color:#0EA5E9"],
+[style*="background: rgb(14, 165, 233)"],
+[style*="background-color: rgb(14, 165, 233)"] { background-color: #6c5ce7 !important; }
+
+/* Color: sky-500 → purple-500 */
+[style*="color: #0EA5E9"],
+[style*="color:#0EA5E9"],
+[style*="color: rgb(14, 165, 233)"] { color: #6c5ce7 !important; }
+
+/* Border: sky-500 → purple-500 */
+[style*="border: 1px solid #0EA5E9"],
+[style*="border:1px solid #0EA5E9"],
+[style*="border-color: #0EA5E9"],
+[style*="border-color:#0EA5E9"] { border-color: #6c5ce7 !important; }
+
+/* sky-400 #38BDF8 → purple-light #a29bfe */
+[style*="background: #38BDF8"],
+[style*="background:#38BDF8"],
+[style*="background-color: #38BDF8"],
+[style*="background-color:#38BDF8"] { background-color: #a29bfe !important; }
+[style*="color: #38BDF8"],
+[style*="color:#38BDF8"] { color: #a29bfe !important; }
+[style*="border-color: #38BDF8"],
+[style*="border: 1px solid #38BDF8"] { border-color: #a29bfe !important; }
+
+/* sky-300 #7DD3FC → purple-200 #c4b8ff */
+[style*="#7DD3FC"] [style*="color: #7DD3FC"],
+[style*="color: #7DD3FC"],
+[style*="color:#7DD3FC"] { color: #c4b8ff !important; }
+[style*="background: #7DD3FC"],
+[style*="background-color: #7DD3FC"] { background-color: #c4b8ff !important; }
+
+/* sky-200 #BAE6FD → lavender #e9e4ff */
+[style*="background: #BAE6FD"],
+[style*="background-color: #BAE6FD"],
+[style*="background:#BAE6FD"],
+[style*="background-color:#BAE6FD"] { background-color: #e9e4ff !important; }
+[style*="color: #BAE6FD"],
+[style*="color:#BAE6FD"] { color: #e9e4ff !important; }
+[style*="border-color: #BAE6FD"],
+[style*="border: 1px solid #BAE6FD"] { border-color: #e9e4ff !important; }
+
+/* sky-50 #F0F9FF → #f4f7fc (app bg) */
+[style*="background: #F0F9FF"],
+[style*="background:#F0F9FF"],
+[style*="background-color: #F0F9FF"],
+[style*="background-color:#F0F9FF"] { background-color: #f4f7fc !important; }
+
+/* sky-100 #E0F2FE → #eef2f9 */
+[style*="background: #E0F2FE"],
+[style*="background:#E0F2FE"],
+[style*="background-color: #E0F2FE"],
+[style*="background-color:#E0F2FE"] { background-color: #eef2f9 !important; }
+
+/* teal-600 #0D9488 → cyan #00cec9 */
+[style*="background: #0D9488"],
+[style*="background-color: #0D9488"] { background-color: #00cec9 !important; }
+[style*="color: #0D9488"],
+[style*="color:#0D9488"] { color: #00cec9 !important; }
+[style*="border-color: #0D9488"] { border-color: #00cec9 !important; }
+
+/* teal-400 #2DD4BF → mint #55efc4 */
+[style*="background: #2DD4BF"],
+[style*="background-color: #2DD4BF"] { background-color: #55efc4 !important; }
+[style*="color: #2DD4BF"],
+[style*="color:#2DD4BF"] { color: #55efc4 !important; }
+
+/* Sky/teal alpha overlays → purple alpha overlays
+   Used for hover states like rgba(14,165,233,0.1) across cards. */
+[style*="rgba(14,165,233,0.04)"] { background-color: rgba(108,92,231,0.04) !important; }
+[style*="rgba(14,165,233,0.08)"] { background-color: rgba(108,92,231,0.08) !important; }
+[style*="rgba(14,165,233,0.10)"],
+[style*="rgba(14,165,233,0.1)"] { background-color: rgba(108,92,231,0.10) !important; }
+[style*="rgba(14,165,233,0.12)"] { background-color: rgba(108,92,231,0.12) !important; }
+[style*="rgba(14,165,233,0.15)"] { background-color: rgba(108,92,231,0.15) !important; }
+[style*="rgba(14,165,233,0.18)"] { background-color: rgba(108,92,231,0.18) !important; }
+[style*="rgba(14,165,233,0.25)"] { background-color: rgba(108,92,231,0.25) !important; }
+
+/* Deep navy #0C2340 (sidebar/topbar brand navy) → #0a0f2c */
+[style*="background: #0C2340"],
+[style*="background-color: #0C2340"] { background-color: #0a0f2c !important; }
+[style*="color: #0C2340"],
+[style*="color:#0C2340"] { color: #0f172a !important; }
+
+/* Navy 0284C7 (director login role) → purple */
+[style*="color: #0284C7"] { color: #6c5ce7 !important; }
+[style*="background: #0284C7"],
+[style*="background-color: #0284C7"] { background-color: #6c5ce7 !important; }
+
+/* Reception cyan #0891B2 → cyan #00cec9 */
+[style*="color: #0891B2"] { color: #00b5b0 !important; }
+[style*="background: #0891B2"] { background-color: #00b5b0 !important; }
+
+/* Sky-400 rgba (#38BDF8 ≈ 56,189,248) alpha overlays → lavender */
+[style*="rgba(56,189,248,0.04)"] { background-color: rgba(162,155,254,0.06) !important; }
+[style*="rgba(56,189,248,0.08)"] { background-color: rgba(162,155,254,0.10) !important; }
+[style*="rgba(56,189,248,0.10)"],
+[style*="rgba(56,189,248,0.1)"] { background-color: rgba(162,155,254,0.12) !important; }
+[style*="rgba(56,189,248,0.12)"] { background-color: rgba(162,155,254,0.14) !important; }
+[style*="rgba(56,189,248,0.15)"] { background-color: rgba(162,155,254,0.18) !important; }
+[style*="rgba(56,189,248,0.20)"],
+[style*="rgba(56,189,248,0.2)"] { background-color: rgba(162,155,254,0.22) !important; }
+[style*="rgba(56,189,248,0.25)"] { background-color: rgba(162,155,254,0.28) !important; }
+[style*="rgba(56,189,248,0.35)"] { background-color: rgba(162,155,254,0.38) !important; }
+[style*="rgba(56,189,248,0.45)"] { background-color: rgba(162,155,254,0.48) !important; }
+[style*="rgba(56,189,248,0.5)"] { background-color: rgba(162,155,254,0.55) !important; }
+
+/* Teal-600 rgba (#0D9488 ≈ 13,148,136) → cyan rgba */
+[style*="rgba(13,148,136"] { background-color: rgba(0,206,201,0.15) !important; }
+
+/* Sapphire #0369A1 (primary-700) → purple-600 */
+[style*="color: #0369A1"] { color: #5a4bd1 !important; }
+[style*="background: #0369A1"],
+[style*="background-color: #0369A1"] { background-color: #5a4bd1 !important; }
+
+/* primary-600 #0284C7 already mapped. primary-800 #075985 → deep purple */
+[style*="color: #075985"] { color: #362a88 !important; }
+[style*="background: #075985"] { background-color: #362a88 !important; }
+
+/* primary-900 #0C4A6E → #1a0a3e */
+[style*="color: #0C4A6E"] { color: #1a0a3e !important; }
+[style*="background: #0C4A6E"] { background-color: #1a0a3e !important; }
+
+/* Teal-500 #14B8A6 → cyan-600 #00b5b0 */
+[style*="color: #14B8A6"] { color: #00b5b0 !important; }
+[style*="background: #14B8A6"] { background-color: #00b5b0 !important; }
+
+/* Linear gradients containing old sky/teal stops → new brand gradient.
+   A full-string rewrite isn't possible with CSS, but we can retint the
+   most common pairings used as hero/button/section backgrounds. */
+[style*="linear-gradient(135deg, #0EA5E9, #0D9488)"],
+[style*="linear-gradient(135deg,#0EA5E9,#0D9488)"],
+[style*="linear-gradient(90deg, #0EA5E9, #0D9488)"] {
+  background-image: linear-gradient(135deg, #6c5ce7, #00cec9) !important;
+}

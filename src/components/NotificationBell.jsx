@@ -107,7 +107,6 @@ export default function NotificationBell({
   const [open, setOpen] = useState(false);
   const rootRef = useRef(null);
 
-  /* Close on outside click + Escape. */
   useEffect(() => {
     if (!open) return undefined;
     const handler = (e) => {
@@ -148,7 +147,7 @@ export default function NotificationBell({
     ? 'bg-sky-700/15 border-sky-400/25 text-white hover:border-sky-400/40'
     : 'bg-sky-50 border-slate-200 text-sky-700 hover:border-sky-300 dark:bg-gray-800 dark:border-gray-700 dark:text-sky-300 dark:hover:border-sky-400/40';
 
-  const badgeRingClass = isDark ? 'border-[#0C2340]' : 'border-white dark:border-gray-900';
+  const badgeRingClass = isDark ? 'border-[#0f172a]' : 'border-white dark:border-gray-900';
 
   return (
     <div ref={rootRef} className="relative shrink-0">
@@ -186,10 +185,9 @@ export default function NotificationBell({
             ? { position: 'fixed', top: '60px', left: '8px', right: '8px', width: 'auto', maxWidth: '100%', animation: 'nb-slide 0.18s ease' }
             : { right: 0, animation: 'nb-slide 0.18s ease' }}
         >
-          {/* Header */}
           <div className="flex items-center justify-between gap-2 border-b border-slate-200 dark:border-gray-700 px-4 py-3.5">
             <div className="flex items-center gap-2">
-              <span className="font-[Outfit,sans-serif] text-[13px] font-bold text-[#0C2340] dark:text-gray-100">
+              <span className="font-[Outfit,sans-serif] text-[13px] font-bold text-[#0f172a] dark:text-gray-100">
                 Notifications
               </span>
               {unreadCount > 0 && (
@@ -245,7 +243,7 @@ export default function NotificationBell({
                   <span className="mt-px shrink-0 text-base" aria-hidden="true">{n.icon}</span>
                   <div className="min-w-0 flex-1">
                     <div className={`mb-0.5 truncate text-[12px] font-bold ${
-                      n.read ? 'text-slate-500 dark:text-gray-500' : 'text-[#0C2340] dark:text-gray-100'
+                      n.read ? 'text-slate-500 dark:text-gray-500' : 'text-[#0f172a] dark:text-gray-100'
                     }`}>
                       {n.title}
                     </div>
@@ -267,7 +265,6 @@ export default function NotificationBell({
             })}
           </div>
 
-          {/* Footer */}
           <div className="border-t border-slate-200 dark:border-gray-700 px-4 py-2.5">
             <button
               type="button"
